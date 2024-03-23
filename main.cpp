@@ -139,21 +139,20 @@ public:
         return i;
     }
 
-    Joc& operator+(Joc& a)
-    {
-        Joc *c = new Joc(a);
-        a.suma += a.suma;
-        delete c;
-        return a.suma;
-    }
+//    Joc& operator+(Joc& a)
+//    {
+//        Joc *c = new Joc(a);
+//        a.suma += a.suma;
+//        return *c;
+//    }
+//
+//    friend Joc& operator-(Joc& a, int b)
+//    {
+//        Joc *c = new Joc(a);
+//        a.suma -= b;
+//        return *c;
+//    }
 
-    friend Joc& operator-(Joc& a, int b)
-    {
-        Joc *c = new Joc(a);
-        a.suma -= b;
-          delete c;
-        return a.suma;
-    }
     friend generaretablou;
     friend linii;
     void jocul(){
