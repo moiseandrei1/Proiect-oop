@@ -144,19 +144,19 @@ public:
         return i;
     }
 
-    Joc& operator+(Joc& a)
-    {
-        Joc *c = new Joc(a);
-        a.suma += a.suma;
-        return *c;
-    }
+    //Joc& operator+(Joc& a)
+    //{
+    //    Joc *c = new Joc(a);
+    //    a.suma += a.suma;
+    //    return *c;
+    //}
 
-    friend Joc& operator-(Joc& a, int b)
-    {
-        Joc *c = new Joc(a);
-        a.suma -= b;
-        return *c;
-    }
+    //friend Joc& operator-(Joc& a, int b)
+    //{
+    //    Joc *c = new Joc(a);
+    //    a.suma -= b;
+    //    return *c;
+    //}
 
     friend generaretablou;
     friend linii;
