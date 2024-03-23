@@ -17,7 +17,9 @@ j
 
 j
 
-miza 1
+miza
+
+1
 
 j
 
