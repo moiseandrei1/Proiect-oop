@@ -119,14 +119,14 @@ public:
         suma = 0;
     }
 
-    Joc& operator=(Joc& a)
-    {
-        Joc *c = new Joc(a);
-        a.suma = a.suma;
-        return *c;
+    Joc& operator=(const Joc& a) {
+        if (this != &a) {
+            suma = a.suma;
+        }
+        return *this;
     }
 
-    int get() const{
+    [[nodiscard]] int get() const{
         return suma;
     }
     friend ostream &operator << (ostream &o, Joc &x)
@@ -172,7 +172,7 @@ public:
             if(caracter == "stop")
                 break;
             suma = suma - miza;
-            generaretablou c;
+            generaretablou c{};
             c.generare();
             for(int i = 1; i <= 3; i ++) {
                 for (int j = 1; j <= 5; j++) {
@@ -264,8 +264,10 @@ public:
                 cout << "Castig: " << plata << ". Dublezi ? (da/nu)\n";
                 string s;
                 std::cin >> s;
-                if(s != "da")
-                    s = s;
+                if(s != "da") {
+                    string s2;
+                    s2 = s;
+                }
                 else
                 {
                     int k = 5;
@@ -314,7 +316,7 @@ int main() {
     int suma2;
     cin >> suma2 >> miza;
     Joc a = suma2;
-    srand(time(0));
+    srand(time(nullptr));
     a.jocul();
     return 0;
 }
