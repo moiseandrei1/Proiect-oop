@@ -121,40 +121,37 @@ public:
         miza = 0;
     }
 
-    //Joc& operator=(const Joc& a) {
-    //    if (this != &a) {
-    //        suma = a.suma;
-    //    }
-    //     return *this;
-    //}
+    Joc& operator=(const Joc& a) {
+        if (this != &a) {
+            suma = a.suma;
+        }
+         return *this;
+    }
 
-    //[[nodiscard]] int get() const{
-    //     return suma;
-    //}
-    // friend std::ostream &operator << (std::ostream &o, Joc &x)
-    //{
-    //    o << x.suma << '\n';
-    //    return o;
-    // }
-    //friend std::istream &operator >> (std::istream &i, Joc &x)
-    //{
-    //    i >> x.suma;
-    //    return i;
-    //}
+     friend std::ostream &operator << (std::ostream &o, Joc &x)
+    {
+        o << x.suma << '\n';
+        return o;
+     }
+    friend std::istream &operator >> (std::istream &i, Joc &x)
+    {
+        i >> x.suma;
+        return i;
+    }
 
-    //Joc& operator+(Joc& a)
-    //{
-    //    Joc *c = new Joc(a);
-    //    a.suma += a.suma;
-    //    return *c;
-    //}
-
-    //friend Joc& operator-(Joc& a, int b)
-    //{
-    //    Joc *c = new Joc(a);
-    //    a.suma -= b;
-    //    return *c;
-    //}
+//    Joc& operator+(Joc& a)
+//    {
+//        Joc *c = new Joc(a);
+//        a.suma += a.suma;
+//        return *c;
+//    }
+//
+//    friend Joc& operator-(Joc& a, int b)
+//    {
+//        Joc *c = new Joc(a);
+//        a.suma -= b;
+//        return *c;
+//    }
 
     friend generaretablou;
     friend linii;
