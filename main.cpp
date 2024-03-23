@@ -125,14 +125,14 @@ public:
         if (this != &a) {
             suma = a.suma;
         }
-         return *this;
+        return *this;
     }
 
-     friend std::ostream &operator << (std::ostream &o, Joc &x)
+    friend std::ostream &operator << (std::ostream &o, Joc &x)
     {
         o << x.suma << '\n';
         return o;
-     }
+    }
     friend std::istream &operator >> (std::istream &i, Joc &x)
     {
         i >> x.suma;
