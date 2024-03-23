@@ -121,26 +121,26 @@ public:
         miza = 0;
     }
 
-    //Joc& operator=(const Joc& a) {
-    //    if (this != &a) {
-    //        suma = a.suma;
-    //    }
-   //     return *this;
-    //}
+    Joc& operator=(const Joc& a) {
+        if (this != &a) {
+            suma = a.suma;
+        }
+        return *this;
+    }
 
-    //[[nodiscard]] int get() const{
-   //     return suma;
-    //}
-   // friend std::ostream &operator << (std::ostream &o, Joc &x)
-    //{
-    //    o << x.suma << '\n';
-    //    return o;
-   // }
-    //friend std::istream &operator >> (std::istream &i, Joc &x)
-    //{
-    //    i >> x.suma;
-    //    return i;
-    //}
+    [[nodiscard]] int get() const{
+        return suma;
+    }
+    friend std::ostream &operator << (std::ostream &o, Joc &x)
+    {
+        o << x.suma << '\n';
+        return o;
+    }
+    friend std::istream &operator >> (std::istream &i, Joc &x)
+    {
+        i >> x.suma;
+        return i;
+    }
 
     //Joc& operator+(Joc& a)
     //{
@@ -177,27 +177,27 @@ public:
             suma = suma - miza3;
             generaretablou c{};
             c.generare();
-            for(int i = 1; i <= 3; i ++) {
-                for (int j = 1; j <= 5; j++) {
-                    int raspuns = c.get2(i, j);
-                    if(raspuns <= 4)
-                        std::cout << char(raspuns + 1);
-                    if(raspuns == 5)
-                        std::cout << char(12);
-                    if(raspuns == 6)
-                        std::cout << char(14);
-                    if(raspuns == 7)
-                        std::cout << "7";
-                    if(raspuns == 8)
-                        std::cout << char(21);
-                    if(raspuns == 9)
-                        std::cout << char(15);
-                    if(raspuns == 10)
-                        std::cout << char(127);
-                    std::cout << " ";
-                }
-                std::cout << '\n';
-            }
+            //for(int i = 1; i <= 3; i ++) {
+                //for (int j = 1; j <= 5; j++) {
+                    //int raspuns = c.get2(i, j);
+//                    if(raspuns <= 4)
+//                        std::cout << char(raspuns + 1);
+//                    if(raspuns == 5)
+//                        std::cout << char(12);
+//                    if(raspuns == 6)
+//                        std::cout << char(14);
+//                    if(raspuns == 7)
+//                        std::cout << "7";
+//                    if(raspuns == 8)
+//                        std::cout << char(21);
+//                    if(raspuns == 9)
+//                        std::cout << char(15);
+//                    if(raspuns == 10)
+//                        std::cout << char(127);
+//                    std::cout << " ";
+                //}
+                //std::cout << '\n';
+            //}
             int plata = 0;
             for(int l = 1; l <= 10; l ++)
             {
