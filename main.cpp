@@ -2,7 +2,6 @@
 #include <array>
 
 using namespace std;
-int miza;
 class generaretablou{
 private:
     int v[4][6];
@@ -110,14 +109,20 @@ public:
 class Joc{
 private:
     int suma;
+    int miza;
 public:
-    Joc(int suma){
+
+    Joc(int suma, int miza){
         this->suma = suma;
+        this->miza = miza;
     }
     ~Joc()
     {
         suma = 0;
+        miza = 0;
     }
+
+
 
     Joc& operator=(const Joc& a) {
         if (this != &a) {
@@ -159,7 +164,8 @@ public:
     void jocul(){
         linii p;
         p.generarelinii();
-        while(suma >= miza)
+        int miza3 = miza;
+        while(suma >= miza3)
         {
             string caracter;
             cin >> caracter;
@@ -167,11 +173,11 @@ public:
             {
                 int y;
                 cin >> y;
-                miza = y;
+                miza3 = y;
             }
             if(caracter == "stop")
                 break;
-            suma = suma - miza;
+            suma = suma - miza3;
             generaretablou c{};
             c.generare();
             for(int i = 1; i <= 3; i ++) {
@@ -214,49 +220,49 @@ public:
                 if(simbol >= 2 && simbol <= 5)
                 {
                     if(cnt == 3)
-                        plata = plata + miza;
+                        plata = plata + miza3;
                     if(cnt == 4)
-                        plata = plata + 3 * miza;
+                        plata = plata + 3 * miza3;
                     if(cnt == 5)
-                        plata = plata + 6 * miza;
+                        plata = plata + 6 * miza3;
                 }
                 if(simbol == 1)
                 {
                     if(cnt == 3)
-                        plata = plata + 2 * miza;
+                        plata = plata + 2 * miza3;
                     if(cnt == 4)
-                        plata = plata + 4 * miza;
+                        plata = plata + 4 * miza3;
                     if(cnt == 5)
-                        plata = plata + 10 * miza;
+                        plata = plata + 10 * miza3;
                 }
                 if(simbol == 6)
                 {
                     if(cnt == 3)
-                        plata = plata + 4 * miza;
+                        plata = plata + 4 * miza3;
                     if(cnt == 4)
-                        plata = plata + 8 * miza;
+                        plata = plata + 8 * miza3;
                     if(cnt == 5)
-                        plata = plata + 17 * miza;
+                        plata = plata + 17 * miza3;
                 }
                 if(simbol == 7)
                 {
                     if(cnt == 2)
-                        plata = plata + miza;
+                        plata = plata + miza3;
                     if(cnt == 3)
-                        plata = plata + 5 * miza;
+                        plata = plata + 5 * miza3;
                     if(cnt == 4)
-                        plata = plata + 15 * miza;
+                        plata = plata + 15 * miza3;
                     if(cnt == 5)
-                        plata = plata + 20 * miza;
+                        plata = plata + 20 * miza3;
                 }
                 if(simbol == 8)
                 {
                     if(cnt == 3)
-                        plata = plata + 4 * miza;
+                        plata = plata + 4 * miza3;
                     if(cnt == 4)
-                        plata = plata + 12 * miza;
+                        plata = plata + 12 * miza3;
                     if(cnt == 5)
-                        plata = plata + 20 * miza;
+                        plata = plata + 20 * miza3;
                 }
             }
             if(plata > 0)
@@ -265,8 +271,7 @@ public:
                 string s;
                 std::cin >> s;
                 if(s != "da") {
-                    string s2;
-                    s2 = s;
+                    cout << "";
                 }
                 else
                 {
@@ -313,9 +318,9 @@ int main() {
     cout << "Pentru a juca introduceti 2 inturi (suma initiala de bani, si miza pe care jucati), si pentru a genera un tabel nou\n";
     cout << "scrieti un caracter. Daca doriti sa schimbati miza scrieti 'miza' si dupa aceea numarul nou.\n";
     cout << "Pentru a opri jocul scrieti stop\n";
-    int suma2;
-    cin >> suma2 >> miza;
-    Joc a = suma2;
+    int suma2, miza2;
+    cin >> suma2 >> miza2;
+    Joc a(suma2, miza2);
     srand(time(nullptr));
     a.jocul();
     return 0;
