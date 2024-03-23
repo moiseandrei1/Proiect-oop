@@ -12,31 +12,30 @@ public:
     }
     void generare()
     {
-
-        v[1][1] = (rand()%9 + 1);
-        v[2][1] = (rand()%9 + 1);
-        v[3][1] = (rand()%9 + 1);
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<int> dis(1, 9);
+        v[1][1] = dis(gen);
+        v[2][1] = dis(gen);
+        v[3][1] = dis(gen);
         for(int i = 1; i <= 3; i ++)
         {
             for(int j = 2; j <= 5; j ++)
             {
-                int h = (rand()% 100  + 1);
+                int h = dis(gen);
                 if(h <= 2)
                 {
                     v[i][j] = v[i][j - 1];
                     if(v[i][j] == 10 && j == 5)
-                        v[i][j] = (rand() % 9 + 1);
+                        v[i][j] = dis(gen);
                 }
                 else {
-                    int numar = 10;
-                    if(j == 5)
-                        numar = 9;
-                    v[i][j] = (rand() % numar + 1);
+                    v[i][j] = dis(gen);
                     if(v[i][j] == 10)
                     {
-                        int b = rand() % 100 + 1;
-                        if(b <= 1)
-                            v[i][j] = rand() % numar + 1;
+                        std::bernoulli_distribution bd(0.01);
+                        if(bd(gen))
+                            v[i][j] = dis(gen);
                     }
                 }
             }
@@ -281,7 +280,10 @@ public:
                         cout << "rosie sau neagra ? (r/n)\n";
                         char ch;
                         cin >> ch;
-                        int raspuns = (rand() % 2);
+                        std::random_device rd;
+                        std::mt19937 gen(rd());
+                        std::uniform_int_distribution<int> dis(0, 1);
+                        int raspuns = dis(gen);
                         if(raspuns) {
                             plata = plata * 2;
                             if(ch == 'r')
@@ -321,7 +323,6 @@ int main() {
     int suma2, miza2;
     cin >> suma2 >> miza2;
     Joc a(suma2, miza2);
-    srand(time(nullptr));
     a.jocul();
     return 0;
 }
