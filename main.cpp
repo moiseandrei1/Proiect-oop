@@ -121,28 +121,26 @@ public:
         miza = 0;
     }
 
+    //Joc& operator=(const Joc& a) {
+    //    if (this != &a) {
+    //        suma = a.suma;
+    //    }
+   //     return *this;
+    //}
 
-
-    Joc& operator=(const Joc& a) {
-        if (this != &a) {
-            suma = a.suma;
-        }
-        return *this;
-    }
-
-    [[nodiscard]] int get() const{
-        return suma;
-    }
-    friend std::ostream &operator << (std::ostream &o, Joc &x)
-    {
-        o << x.suma << '\n';
-        return o;
-    }
-    friend std::istream &operator >> (std::istream &i, Joc &x)
-    {
-        i >> x.suma;
-        return i;
-    }
+    //[[nodiscard]] int get() const{
+   //     return suma;
+    //}
+   // friend std::ostream &operator << (std::ostream &o, Joc &x)
+    //{
+    //    o << x.suma << '\n';
+    //    return o;
+   // }
+    //friend std::istream &operator >> (std::istream &i, Joc &x)
+    //{
+    //    i >> x.suma;
+    //    return i;
+    //}
 
     //Joc& operator+(Joc& a)
     //{
