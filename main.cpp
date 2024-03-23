@@ -124,11 +124,12 @@ public:
     Joc& operator=(const Joc& a) {
         if (this != &a) {
             suma = a.suma;
+            miza = a.miza;
         }
         return *this;
     }
 
-    friend std::ostream &operator << (std::ostream &o, Joc &x)
+    friend std::ostream &operator << (std::ostream &o, const Joc &x)
     {
         o << x.suma << '\n';
         return o;
