@@ -1,7 +1,7 @@
-#include <bits/stdc++.h>
-#include <array>
+#include <iostream>
+#include <random>
+#include <string>
 
-using namespace std;
 class generaretablou{
 private:
     int v[4][6];
@@ -51,9 +51,9 @@ public:
 };
 class linii{
 private:
-    pair <int, int> p[11][6];
+    std::pair <int, int> p[11][6];
 public:
-    pair<int, int> getnext(int a, int b)
+    std::pair<int, int> getnext(int a, int b)
     {
         return p[a][b];
     }
@@ -61,48 +61,48 @@ public:
     {
         for(int i = 1; i <= 3; i ++)
             for(int j = 1; j <= 5; j ++)
-                p[i][j] = make_pair(i, j);
-        p[4][1] = make_pair(1, 1);
-        p[4][2] = make_pair(2, 2);
-        p[4][3] = make_pair(3, 3);
-        p[4][4] = make_pair(2, 4);
-        p[4][5] = make_pair(1, 5);
+                p[i][j] = std::make_pair(i, j);
+        p[4][1] = std::make_pair(1, 1);
+        p[4][2] = std::make_pair(2, 2);
+        p[4][3] = std::make_pair(3, 3);
+        p[4][4] = std::make_pair(2, 4);
+        p[4][5] = std::make_pair(1, 5);
 
-        p[5][1] = make_pair(3, 1);
-        p[5][2] = make_pair(2, 2);
-        p[5][3] = make_pair(1, 3);
-        p[5][4] = make_pair(2, 4);
-        p[5][5] = make_pair(3, 5);
+        p[5][1] = std::make_pair(3, 1);
+        p[5][2] = std::make_pair(2, 2);
+        p[5][3] = std::make_pair(1, 3);
+        p[5][4] = std::make_pair(2, 4);
+        p[5][5] = std::make_pair(3, 5);
 
-        p[6][1] = make_pair(1, 1);
-        p[6][2] = make_pair(1, 2);
-        p[6][3] = make_pair(2, 3);
-        p[6][4] = make_pair(3, 4);
-        p[6][5] = make_pair(4, 5);
+        p[6][1] = std::make_pair(1, 1);
+        p[6][2] = std::make_pair(1, 2);
+        p[6][3] = std::make_pair(2, 3);
+        p[6][4] = std::make_pair(3, 4);
+        p[6][5] = std::make_pair(4, 5);
 
-        p[7][1] = make_pair(3, 1);
-        p[7][2] = make_pair(3, 2);
-        p[7][3] = make_pair(2, 3);
-        p[7][4] = make_pair(1, 4);
-        p[7][5] = make_pair(1, 5);
+        p[7][1] = std::make_pair(3, 1);
+        p[7][2] = std::make_pair(3, 2);
+        p[7][3] = std::make_pair(2, 3);
+        p[7][4] = std::make_pair(1, 4);
+        p[7][5] = std::make_pair(1, 5);
 
-        p[8][1] = make_pair(2, 1);
-        p[8][2] = make_pair(1, 2);
-        p[8][3] = make_pair(1, 3);
-        p[8][4] = make_pair(1, 4);
-        p[8][5] = make_pair(2, 5);
+        p[8][1] = std::make_pair(2, 1);
+        p[8][2] = std::make_pair(1, 2);
+        p[8][3] = std::make_pair(1, 3);
+        p[8][4] = std::make_pair(1, 4);
+        p[8][5] = std::make_pair(2, 5);
 
-        p[9][1] = make_pair(2, 1);
-        p[9][2] = make_pair(3, 2);
-        p[9][3] = make_pair(3, 3);
-        p[9][4] = make_pair(3, 4);
-        p[9][5] = make_pair(2, 5);
+        p[9][1] = std::make_pair(2, 1);
+        p[9][2] = std::make_pair(3, 2);
+        p[9][3] = std::make_pair(3, 3);
+        p[9][4] = std::make_pair(3, 4);
+        p[9][5] = std::make_pair(2, 5);
 
-        p[10][1] = make_pair(1, 1);
-        p[10][2] = make_pair(2, 2);
-        p[10][3] = make_pair(2, 3);
-        p[10][4] = make_pair(2, 4);
-        p[10][5] = make_pair(1, 5);
+        p[10][1] = std::make_pair(1, 1);
+        p[10][2] = std::make_pair(2, 2);
+        p[10][3] = std::make_pair(2, 3);
+        p[10][4] = std::make_pair(2, 4);
+        p[10][5] = std::make_pair(1, 5);
     }
 };
 class Joc{
@@ -133,12 +133,12 @@ public:
     [[nodiscard]] int get() const{
         return suma;
     }
-    friend ostream &operator << (ostream &o, Joc &x)
+    friend std::ostream &operator << (std::ostream &o, Joc &x)
     {
         o << x.suma << '\n';
         return o;
     }
-    friend istream &operator >> (istream &i, Joc &x)
+    friend std::istream &operator >> (std::istream &i, Joc &x)
     {
         i >> x.suma;
         return i;
@@ -166,12 +166,12 @@ public:
         int miza3 = miza;
         while(suma >= miza3)
         {
-            string caracter;
-            cin >> caracter;
+            std::string caracter;
+            std::cin >> caracter;
             if(caracter == "miza")
             {
                 int y;
-                cin >> y;
+                std::cin >> y;
                 miza3 = y;
             }
             if(caracter == "stop")
@@ -196,20 +196,20 @@ public:
                         std::cout << char(15);
                     if(raspuns == 10)
                         std::cout << char(127);
-                    cout << " ";
+                    std::cout << " ";
                 }
                 std::cout << '\n';
             }
             int plata = 0;
             for(int l = 1; l <= 10; l ++)
             {
-                pair <int, int> start = p.getnext(l, 1);
+                std::pair <int, int> start = p.getnext(l, 1);
                 int cnt = 1;
                 int simbol = c.get2(start.first, start.second);
                 for(int i = 2; i <= 5; i ++)
                 {
                     int a = c.get2(start.first, start.second);
-                    pair <int, int> urm = p.getnext(l, i);
+                    std::pair <int, int> urm = p.getnext(l, i);
                     int b = c.get2(urm.first, urm.second);
                     if(a == b || a == 10 || b == 10)
                         cnt ++;
@@ -266,20 +266,20 @@ public:
             }
             if(plata > 0)
             {
-                cout << "Castig: " << plata << ". Dublezi ? (da/nu)\n";
-                string s;
+                std::cout << "Castig: " << plata << ". Dublezi ? (da/nu)\n";
+                std::string s;
                 std::cin >> s;
                 if(s != "da") {
-                    cout << "";
+                    std::cout << "";
                 }
                 else
                 {
                     int k = 5;
                     while(k > 0)
                     {
-                        cout << "rosie sau neagra ? (r/n)\n";
+                        std::cout << "rosie sau neagra ? (r/n)\n";
                         char ch;
-                        cin >> ch;
+                        std::cin >> ch;
                         std::random_device rd;
                         std::mt19937 gen(rd());
                         std::uniform_int_distribution<int> dis(0, 1);
@@ -287,22 +287,22 @@ public:
                         if(raspuns) {
                             plata = plata * 2;
                             if(ch == 'r')
-                                cout << "rosie\n";
+                                std::cout << "rosie\n";
                             else
-                                cout << "neagra\n";
+                                std::cout << "neagra\n";
                         }
                         else
                         {
                             if(ch == 'r')
-                                cout << "neagra\n";
+                                std::cout << "neagra\n";
                             else
-                                cout << "rosie\n";
+                                std::cout << "rosie\n";
                             plata = 0;
                             break;
                         }
-                        cout << "continui ? (da/nu)\n";
-                        string s2;
-                        cin >> s2;
+                        std::cout << "continui ? (da/nu)\n";
+                        std::string s2;
+                        std::cin >> s2;
                         if(s2 == "nu")
                             break;
                         else
@@ -311,17 +311,17 @@ public:
                 }
             }
             suma = suma + plata;
-            cout << "Suma: " << suma << " " << "Castig " << plata << '\n';
-            cout << '\n';
+            std::cout << "Suma: " << suma << " " << "Castig " << plata << '\n';
+            std::cout << '\n';
         }
     }
 };
 int main() {
-    cout << "Pentru a juca introduceti 2 inturi (suma initiala de bani, si miza pe care jucati), si pentru a genera un tabel nou\n";
-    cout << "scrieti un caracter. Daca doriti sa schimbati miza scrieti 'miza' si dupa aceea numarul nou.\n";
-    cout << "Pentru a opri jocul scrieti stop\n";
+    std::cout << "Pentru a juca introduceti 2 inturi (suma initiala de bani, si miza pe care jucati), si pentru a genera un tabel nou\n";
+    std::cout << "scrieti un caracter. Daca doriti sa schimbati miza scrieti 'miza' si dupa aceea numarul nou.\n";
+    std::cout << "Pentru a opri jocul scrieti stop\n";
     int suma2, miza2;
-    cin >> suma2 >> miza2;
+    std::cin >> suma2 >> miza2;
     Joc a(suma2, miza2);
     a.jocul();
     return 0;
