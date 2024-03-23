@@ -3,9 +3,9 @@
 #include <string>
 
 class generaretablou{
-private:
-    int v[4][6];
+
 public:
+    int v[4][6];
     int get2(int i, int j)
     {
         return v[i][j];
@@ -173,7 +173,7 @@ public:
             if(caracter == "stop")
                 break;
             suma = suma - miza3;
-            generaretablou c{};
+            generaretablou c;
             c.generare();
             for(int i = 1; i <= 3; i ++) {
                 for (int j = 1; j <= 5; j++) {
