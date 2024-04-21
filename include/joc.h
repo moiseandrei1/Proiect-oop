@@ -7,7 +7,7 @@ private:
     int suma;
     int miza;
 public:
-    Joc(int suma, int miza){
+    Joc(int suma, int miza) : generaretablou(){
         this->suma = suma;
         this->miza = miza;
     }
@@ -20,11 +20,11 @@ public:
         }
         return *this;
     }
-    Joc(const Joc &p) : linii(p)
-    {
-        this->suma = suma;
-        this->miza = miza;
-    }
+    //Joc(const Joc &p) : linii(p)
+    //{
+    //    this->suma = suma;
+    //    this->miza = miza;
+    //}
     friend std::ostream &operator << (std::ostream &o, const Joc &x)
     {
         o << x.suma << '\n';
@@ -52,7 +52,7 @@ public:
             if(caracter == "stop")
                 break;
             suma = suma - miza3;
-            generaretablou c;
+            generaretablou c{};
             c.generare();
             for(int i = 1; i <= 3; i ++) {
                 for (int j = 1; j <= 5; j++) {

@@ -7,7 +7,7 @@ public:
     {
         std::cout << "scrieti un caracter. Daca doriti sa schimbati miza scrieti 'miza' si dupa aceea numarul nou.\n";
     }
-    void afisare2()
+    virtual void afisare2()
     {
         std::cout << "scrieti un caracter. Daca doriti sa schimbati miza scrieti 'miza' si dupa aceea numarul nou.\n";
         std::cout << "Pentru a opri jocul scrieti stop\n";
@@ -16,7 +16,7 @@ public:
 class test : public intro
 {
 public:
-    void afisare()
+    void afisare() override
     {
         std::cout << "Pentru a juca introduceti 2 inturi (suma initiala de bani, si miza pe care jucati), si pentru a genera un tabel nou\n";
     }
@@ -31,7 +31,7 @@ public:
 class derivata : public abstract
 {
 public:
-    void f()
+    void f() override
     {
         std::cout << "Pentru a opri jocul scrieti stop\n";
     }
