@@ -306,7 +306,6 @@ public:
                             k = k - 1;
                     }
                 }
-
             }
             suma = suma + plata;
             std::cout << "Suma: " << suma << " " << "Castig " << plata << '\n';
